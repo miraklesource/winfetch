@@ -1,0 +1,32 @@
+# yaml-language-server: $schema=https://gist.githubusercontent.com/sargunv/c2ca41a08391cd06feaad97aece309e4/raw/empty-json-schema.json
+
+BasedOnStyle: LLVM
+Language: Cpp
+
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never
+ColumnLimit: 105
+
+PointerAlignment: Right
+DerivePointerAlignment: false
+
+BreakBeforeBraces: Allman
+
+# Arguments/parameters: if they don't fit on one line, one per line
+BinPackArguments: false
+BinPackParameters: OnePerLine
+AlignAfterOpenBracket: Align
+
+# Return type on its own line for function definitions
+AlwaysBreakAfterReturnType: AllDefinitions
+
+AllowShortFunctionsOnASingleLine: None
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: false
+AllowShortBlocksOnASingleLine: Never
+AllowShortCaseLabelsOnASingleLine: false
+
+SpaceAfterCStyleCast: true
+
+SortIncludes: Never
