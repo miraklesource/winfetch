@@ -165,3 +165,21 @@ print_gpu()
     print_blue("GPU");
     printf(": %s\n", gpu_name);
 }
+
+void
+print_memory_info()
+{
+    MEMORYSTATUSEX mem_info;
+    mem_info.dwLength = sizeof(mem_info);
+    if (!GlobalMemoryStatusEx(&mem_info))
+    {
+        printf("Failed to retrieve memory status: %lu\n", GetLastError());
+        return;
+    }
+
+    double total_ram = (double) mem_info.ullTotalPhys / (1024 * 1024 * 1024);
+    double used_ram = (double) mem_info.ullAvailPhys / (1024 * 1024 * 1024);
+
+    print_blue("Memory");
+    printf(": %.2f GB / %.2f GB\n", used_ram, total_ram);
+}
